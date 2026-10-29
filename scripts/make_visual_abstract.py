@@ -15,8 +15,8 @@ INK, INK2, GRID, SURF = "#0b0b0b", "#52514e", "#e4e3df", "#fcfcfb"
 BENCH, ALT, NEUTRAL, SECOND = "#e34948", "#2a78d6", "#9a9893", "#eb6834"
 
 # ---------------------------------------------------------------- data
-# panel 1: R^2 of learned vs closed-form actions in the 9 configurations of CJS Figs 1-3
-cfg = ["Fig 1", "Fig 2", "$\\Xi$=1", "$\\Xi$=2", "$\\Xi$=4", "$\\Xi$=0", "$\\Xi$=1", "$\\Xi$=2", "$\\Xi$=4"]
+# panel 1: R^2 of learned vs closed-form actions in the 9 configurations of the RNE analysis
+cfg = ["base", "no ξ", "$\\Xi$=1", "$\\Xi$=2", "$\\Xi$=4", "$\\Xi$=0", "$\\Xi$=1", "$\\Xi$=2", "$\\Xi$=4"]
 r2_B = [0.992, 0.990, 0.993, 0.995, 0.996, 0.998, 0.998, 0.998, 0.998]
 r2_I = [0.970, 0.974, 0.988, 0.987, 0.990, 0.998, 0.995, 0.994, 0.994]
 # panel 2: broker's gain from a feedback deviation, % of |J^B| (3 seeds), open- vs closed-loop equilibrium
@@ -27,7 +27,7 @@ rt = json.loads((ROOT / "results" / "results_fee4bps.json").read_text())["flow_r
 t_drift, t_inv = rt["t_fwd_drift"], rt["t_own_inventory"]
 # panel 4: RL benchmark, test objective at gamma*
 S = {r["model"]: r for r in json.loads((ROOT / "results" / "rl_benchmark" / "summary.json").read_text())["rows"]}
-rows = [("Closed-form Nash\n(benchmark)", "Nash_closed_form_gamma_star", BENCH),
+rows = [("Closed-form RNE\n(benchmark)", "Nash_closed_form_gamma_star", BENCH),
         ("Closed form,\nQᴵ term removed", "Nash_closed_form_no_QI_channel", NEUTRAL),
         ("Linear rule v=−κQᴮ", "Linear_control_kappa_tuned_on_val", NEUTRAL),
         ("PPO", "PPO", ALT), ("Recurrent PPO", "RecurrentPPO", ALT),
@@ -40,7 +40,7 @@ plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 8.5, "axes.edgec
 fig = plt.figure(figsize=(13.5, 5.2), facecolor=SURF)
 fig.text(0.012, 0.955, "Learned broker strategies against informed order flow", fontsize=15,
          weight="bold", color=INK)
-fig.text(0.012, 0.905, "Benchmark: closed-form Nash equilibrium of Cartea, Jaimungal & Sánchez-Betancourt (2026)"
+fig.text(0.012, 0.905, "Benchmark: Riccati–Nash equilibrium (RNE) of Cartea, Jaimungal & Sánchez-Betancourt (2026)"
          "   |   certified multi-agent learning → 4.3 M Binance BTC/USDT trades → 11 RL families, 144 held-out hours",
          fontsize=9, color=INK2)
 gs = fig.add_gridspec(1, 4, left=0.045, right=0.975, top=0.74, bottom=0.2, wspace=0.45,
@@ -59,16 +59,16 @@ a.plot(x, r2_I, "s", ms=6, color=SECOND, label="informed trader")
 a.axhline(0.95, color=INK2, lw=0.8, ls=":")
 a.text(8.4, 0.9515, "0.95 target", fontsize=7, color=INK2, ha="right", va="bottom")
 a.axvspan(4.5, 8.5, color="#f0efec", zorder=0)
-a.text(6.5, 0.9435, "strong impact:\nno CJS theorem applies", ha="center", fontsize=7, color=INK2)
+a.text(6.5, 0.9435, "strong impact:\nno RNE existence result", ha="center", fontsize=7, color=INK2)
 a.set_xticks(list(x), cfg, fontsize=7, rotation=45)
 a.set_ylim(0.94, 1.0); a.set_ylabel("R² learned vs closed-form actions")
 a.grid(axis="y", color=GRID, lw=0.6); a.legend(frameon=False, fontsize=7, loc="lower left")
-head(a, "①", "Equilibrium recovered", "R² ≥ 0.97 in all 9 CJS configurations;\nexploitability < 1% of payoffs")
+head(a, "①", "Equilibrium recovered", "R² ≥ 0.97 in all 9 RNE configurations;\nexploitability < 1% of payoffs")
 
 # 2 concept
 b = fig.add_subplot(gs[1])
 seeds = [0, 1, 2]
-b.bar([s - 0.2 for s in seeds], ol_gain, width=0.38, color=BENCH, label="vs open-loop Nash (CJS concept)")
+b.bar([s - 0.2 for s in seeds], ol_gain, width=0.38, color=BENCH, label="vs open-loop RNE")
 b.bar([0.2], [max(cl_gain[0], 0) + 0.3], width=0.38, color=ALT, label="vs closed-loop Nash (seed 0)")
 b.text(0.2, 1.2, "≈0", ha="center", fontsize=7.5, color=INK)
 for s, v in zip(seeds, ol_gain):
@@ -76,7 +76,7 @@ for s, v in zip(seeds, ol_gain):
 b.set_xticks(seeds, ["seed 0", "seed 1", "seed 2"]); b.set_ylim(0, 25)
 b.set_ylabel("broker's gain from reacting to the state\n(% of her payoff)")
 b.grid(axis="y", color=GRID, lw=0.6); b.legend(frameon=False, fontsize=6.8, loc="upper right")
-head(b, "②", "Open loop is exploitable", "against the CJS equilibrium, a broker\nwho reacts to the state gains 14–20%")
+head(b, "②", "Open loop is exploitable", "against the RNE, a broker\nwho reacts to the state gains 14–20%")
 
 # 3 data
 c = fig.add_subplot(gs[2])
