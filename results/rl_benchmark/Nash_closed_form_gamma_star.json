@@ -1,0 +1,14 @@
+{
+  "name": "Nash_closed_form_gamma_star",
+  "val_objective": -109351.065783662,
+  "test": {
+    "objective_mean": -87067.03879627184,
+    "objective_se": 22866.709499703356,
+    "pnl_mean": 1762.6172978418642,
+    "pnl_sd": 2731.4800239980364,
+    "sharpe": 0.6452975245493252,
+    "abs_QT": 57.755193474810945,
+    "lit_volume": 254.70008708282754
+  },
+  "gamma": 0.1
+}

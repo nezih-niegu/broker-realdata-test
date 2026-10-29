@@ -1,0 +1,14 @@
+{
+  "name": "Nash_closed_form_gamma_tuned_on_val",
+  "val_objective": -93479.8491685561,
+  "test": {
+    "objective_mean": -73586.8342950074,
+    "objective_se": 19081.662425389553,
+    "pnl_mean": 456.6944103390294,
+    "pnl_sd": 1705.340008644256,
+    "sharpe": 0.2678025543434597,
+    "abs_QT": 50.34890143501644,
+    "lit_volume": 419.56709662154185
+  },
+  "gamma": 0.3
+}

@@ -1,0 +1,19 @@
+{
+  "name": "DDPG_seed0",
+  "val_objective": -425359.87277605716,
+  "test": {
+    "objective_mean": -1001134.9195762873,
+    "objective_se": 6444.318594677682,
+    "pnl_mean": -68642.84512596954,
+    "pnl_sd": 20054.970605609386,
+    "sharpe": -3.4227347661516943,
+    "abs_QT": 35.950555853500205,
+    "lit_volume": 3359.6093701589434
+  },
+  "algo": "DDPG",
+  "seed": 0,
+  "steps": 100000,
+  "extended": false,
+  "reward_scale": 10000.0,
+  "train_seconds": 345.3518240451813
+}

@@ -1,0 +1,19 @@
+{
+  "name": "SAC_seed0",
+  "val_objective": -309444.9697579799,
+  "test": {
+    "objective_mean": -262385.8954598322,
+    "objective_se": 42322.66304188406,
+    "pnl_mean": -66997.33635170147,
+    "pnl_sd": 22213.95140990781,
+    "sharpe": -3.016002651460716,
+    "abs_QT": 65.5782964818909,
+    "lit_volume": 3748.100683723279
+  },
+  "algo": "SAC",
+  "seed": 0,
+  "steps": 100000,
+  "extended": false,
+  "reward_scale": 10000.0,
+  "train_seconds": 693.5520014762878
+}

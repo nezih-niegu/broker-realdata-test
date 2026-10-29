@@ -1,0 +1,14 @@
+{
+  "name": "Nash_closed_form_no_QI_channel",
+  "val_objective": -1602.2895750732605,
+  "test": {
+    "objective_mean": -2000.4522483713145,
+    "objective_se": 274.63108673750094,
+    "pnl_mean": 8.618511679867721,
+    "pnl_sd": 1066.9607023942178,
+    "sharpe": 0.008077628033092615,
+    "abs_QT": 3.273187930494271,
+    "lit_volume": 374.1090031776632
+  },
+  "gamma": 0.1
+}

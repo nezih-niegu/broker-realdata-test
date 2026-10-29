@@ -1,0 +1,14 @@
+{
+  "name": "Inventory_decay_tau_tuned_on_val",
+  "val_objective": -94598.32939252135,
+  "test": {
+    "objective_mean": -79731.71321767035,
+    "objective_se": 14543.258043288311,
+    "pnl_mean": 1839.412298363817,
+    "pnl_sd": 2784.481096331151,
+    "sharpe": 0.6605942847977807,
+    "abs_QT": 4.890289707658021,
+    "lit_volume": 118.8611764733604
+  },
+  "tau0": 0.005
+}

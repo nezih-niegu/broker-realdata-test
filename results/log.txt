@@ -1,0 +1,74 @@
+
+===== fee4bps: 4,307,535 trades, 3,457,462 parent orders, 14 train days (2018-12-31..2019-01-13), 6 test days (2019-01-14..2019-01-19)
+informed threshold 0.6315 BTC (train 95% quantile); TEST-day markouts (bps):
+  informed   10s: +0.37±0.04  60s: +0.30±0.09  300s: +0.16±0.14  volume share 49%
+  uninformed 10s: -0.37±0.00  60s: -0.39±0.01  300s: -0.42±0.02  volume share 51%
+
+===== fee1bps: 4,307,535 trades, 3,457,462 parent orders, 14 train days (2018-12-31..2019-01-13), 6 test days (2019-01-14..2019-01-19)
+informed threshold 0.6315 BTC (train 95% quantile); TEST-day markouts (bps):
+  informed   10s: +0.37±0.04  60s: +0.30±0.09  300s: +0.16±0.14  volume share 49%
+  uninformed 10s: -0.37±0.00  60s: -0.39±0.01  300s: -0.42±0.02  volume share 51%
+episodes: train 336, test 144, n = 120 steps of 30s
+calibrated base parameters (units: hours, USDT, BTC): T=1, a=0.003865, b=0.003865, c=0.003865, Ups=0.09749, Xi=1.882, kappa_a=64.98, sig_a=119, kappa_x=178.3, sig_x=6028, sig_S=22.91
+signal: half-life 1 steps, horizon 1 steps; R^2 of forward drift: train 0.0017, test -0.0037; half-spread 0.467; per-unit lit cost 1.977 USDT/BTC
+training Sharpe of Nash broker by gamma: 0: 0.159, 0.0001: 0.167, 0.0003: 0.182, 0.001: 0.219, 0.003: 0.271, 0.01: 0.305, 0.03: 0.317, 0.1: 0.329, 0.3: 0.168  -> gamma* = 0.1
+parameters at gamma*: phi=psi=3.221, rB=rI=26.25; Riccati finite=True, max|P|=833
+episodes: train 336, test 144, n = 120 steps of 30s
+calibrated base parameters (units: hours, USDT, BTC): T=1, a=0.001651, b=0.001651, c=0.001651, Ups=0.09749, Xi=1.882, kappa_a=64.98, sig_a=119, kappa_x=178.3, sig_x=6028, sig_S=22.91
+signal: half-life 1 steps, horizon 1 steps; R^2 of forward drift: train 0.0017, test -0.0037; half-spread 0.467; per-unit lit cost 0.844 USDT/BTC
+training Sharpe of Nash broker by gamma: 0: -0.022, 0.0001: -0.021, 0.0003: -0.017, 0.001: 0.003, 0.003: 0.044, 0.01: 0.127, 0.03: 0.162, 0.1: 0.048, 0.3: -0.504  -> gamma* = 0.03
+parameters at gamma*: phi=psi=1.376, rB=rI=7.874; Riccati finite=True, max|P|=833
+  Nash broker (closed form)                    P&L/h   +550.3 (sd  1616.2) net of client spread   -833.5  Sharpe/h +0.340  P&L-Nash    +0.0 ±   0.0  |Q_T|  64.51  lit vol  219.3
+  Nash broker, signal off                      P&L/h   +559.7 (sd  1624.1) net of client spread   -824.1  Sharpe/h +0.345  P&L-Nash    +9.4 ±   2.0  |Q_T|  64.52  lit vol  215.4
+  Nash broker, informed-inventory channel off  P&L/h   -419.2 (sd  1132.1) net of client spread  -1803.0  Sharpe/h -0.370  P&L-Nash  -969.5 ± 131.0  |Q_T|   3.29  lit vol  356.3
+  Internalise, liquidate at close              P&L/h   -902.3 (sd  4521.7) net of client spread  -2286.0  Sharpe/h -0.200  P&L-Nash -1452.5 ± 336.5  |Q_T|   3.33  lit vol  101.2
+  Externalise all client flow                  P&L/h  -1038.0 (sd  1897.2) net of client spread  -2421.8  Sharpe/h -0.547  P&L-Nash -1588.3 ± 191.8  |Q_T|   4.18  lit vol  450.0
+  Inventory decay, no signal (tau0=0.05h)      P&L/h   +144.6 (sd  1923.9) net of client spread  -1239.1  Sharpe/h +0.075  P&L-Nash  -405.6 ± 101.1  |Q_T|  15.83  lit vol  102.8
+  frontier Nash broker (closed form), gamma grid: 0: +3/4094; 0.0001: +33/4052; 0.0003: +90/3932; 0.001: +255/3491; 0.003: +482/2740; 0.01: +628/1990; 0.03: +550/1616; 0.1: +131/1559; 0.3: -4853/7114
+  frontier Inventory decay, tau0 grid: 0.005: +101/1927; 0.01: +109/1922; 0.02: +120/1918; 0.05: +145/1924; 0.1: +177/1939; 0.2: +232/1959; 0.5: +349/1988; 1: +462/2027
+  informed   flow on forward drift: -28.6 (t=-4.3); on own inventory: +44.9 (t=+6.8)  [BTC/h per 1 sd]
+  uninformed flow on forward drift: -0.1 (t=-0.0); on own inventory: +38.7 (t=+18.1)  [BTC/h per 1 sd]
+done in 47s
+
+===== fee10bps: 4,307,535 trades, 3,457,462 parent orders, 14 train days (2018-12-31..2019-01-13), 6 test days (2019-01-14..2019-01-19)
+informed threshold 0.6315 BTC (train 95% quantile); TEST-day markouts (bps):
+  informed   10s: +0.37±0.04  60s: +0.30±0.09  300s: +0.16±0.14  volume share 49%
+  uninformed 10s: -0.37±0.00  60s: -0.39±0.01  300s: -0.42±0.02  volume share 51%
+[fee4bps learned-OL] it     1 JB=-20801.8281 JI=+0.0000  (7s)
+episodes: train 336, test 144, n = 120 steps of 30s
+calibrated base parameters (units: hours, USDT, BTC): T=1, a=0.008295, b=0.008295, c=0.008295, Ups=0.09749, Xi=1.882, kappa_a=64.98, sig_a=119, kappa_x=178.3, sig_x=6028, sig_S=22.91
+signal: half-life 1 steps, horizon 1 steps; R^2 of forward drift: train 0.0017, test -0.0037; half-spread 0.467; per-unit lit cost 4.242 USDT/BTC
+training Sharpe of Nash broker by gamma: 0: 0.280, 0.0001: 0.284, 0.0003: 0.290, 0.001: 0.300, 0.003: 0.307, 0.01: 0.310, 0.03: 0.309, 0.1: 0.313, 0.3: 0.301  -> gamma* = 0.1
+parameters at gamma*: phi=psi=6.913, rB=rI=26.25; Riccati finite=True, max|P|=833
+  Nash broker (closed form)                    P&L/h  +5085.1 (sd  7890.0) net of client spread  -1869.0  Sharpe/h +0.644  P&L-Nash    +0.0 ±   0.0  |Q_T|  59.25  lit vol  211.0
+  Nash broker, signal off                      P&L/h  +5097.6 (sd  7907.1) net of client spread  -1856.5  Sharpe/h +0.645  P&L-Nash   +12.6 ±   1.6  |Q_T|  59.25  lit vol  210.2
+  Nash broker, informed-inventory channel off  P&L/h  +2926.2 (sd  5083.6) net of client spread  -4027.9  Sharpe/h +0.576  P&L-Nash -2158.9 ± 259.9  |Q_T|   3.29  lit vol  305.8
+  Internalise, liquidate at close              P&L/h  +1588.6 (sd  7404.8) net of client spread  -5365.5  Sharpe/h +0.215  P&L-Nash -3496.4 ± 844.8  |Q_T|   3.33  lit vol  101.2
+  Externalise all client flow                  P&L/h  -2145.4 (sd  3575.4) net of client spread  -9099.5  Sharpe/h -0.600  P&L-Nash -7230.4 ± 894.6  |Q_T|   4.18  lit vol  450.0
+  Inventory decay, no signal (tau0=0.05h)      P&L/h  +5481.9 (sd  8126.1) net of client spread  -1472.2  Sharpe/h +0.675  P&L-Nash  +396.8 ±  81.8  |Q_T|  15.83  lit vol  102.8
+  frontier Nash broker (closed form), gamma grid: 0: +5386/7396; 0.0001: +5455/7534; 0.0003: +5561/7758; 0.001: +5762/8238; 0.003: +5930/8757; 0.01: +5944/9052; 0.03: +5716/8831; 0.1: +5085/7890; 0.3: +3811/6162
+  frontier Inventory decay, tau0 grid: 0.005: +5316/7944; 0.01: +5353/7977; 0.02: +5400/8027; 0.05: +5482/8126; 0.1: +5566/8239; 0.2: +5677/8399; 0.5: +5860/8684; 1: +6006/8922
+  informed   flow on forward drift: -28.6 (t=-4.3); on own inventory: +44.9 (t=+6.8)  [BTC/h per 1 sd]
+  uninformed flow on forward drift: -0.1 (t=-0.0); on own inventory: +38.7 (t=+18.1)  [BTC/h per 1 sd]
+done in 56s
+[fee4bps learned-OL] it   500 JB=+104.0338 JI=+2.4243  (151s)
+[fee4bps learned-OL] it  1000 JB=+104.2405 JI=+2.4838  (248s)
+[fee4bps learned-OL] it  1500 JB=+104.1162 JI=+2.4697  (344s)
+[fee4bps learned-CL] it     1 JB=+104.4379 JI=+2.4932  (0s)
+[fee4bps learned-CL] it   500 JB=+104.3337 JI=+2.4905  (237s)
+[fee4bps learned-CL] it  1000 JB=+103.9908 JI=+2.4995  (466s)
+[fee4bps learned-CL] it  1500 JB=+103.8563 JI=+2.4821  (700s)
+in the calibrated simulator: R2_learnedOL_vs_Nash_broker_in_sim=0.8095, sim_JB_nash=61.4915, sim_JB_learnedOL=103.8566, sim_JB_learnedCL=103.6117
+  Nash broker (closed form)                    P&L/h  +1762.6 (sd  2731.5) net of client spread  -1477.9  Sharpe/h +0.645  P&L-Nash    +0.0 ±   0.0  |Q_T|  57.76  lit vol  254.7
+  Nash broker, signal off                      P&L/h  +1777.0 (sd  2749.3) net of client spread  -1463.5  Sharpe/h +0.646  P&L-Nash   +14.4 ±   1.9  |Q_T|  57.76  lit vol  253.0
+  Nash broker, informed-inventory channel off  P&L/h     +8.6 (sd  1067.0) net of client spread  -3231.9  Sharpe/h +0.008  P&L-Nash -1754.0 ± 209.7  |Q_T|   3.27  lit vol  374.1
+  Internalise, liquidate at close              P&L/h    -72.0 (sd  5047.3) net of client spread  -3312.5  Sharpe/h -0.014  P&L-Nash -1834.6 ± 491.0  |Q_T|   3.33  lit vol  101.2
+  Externalise all client flow                  P&L/h  -1407.1 (sd  2399.4) net of client spread  -4647.7  Sharpe/h -0.586  P&L-Nash -3169.7 ± 382.3  |Q_T|   4.18  lit vol  450.0
+  Inventory decay, no signal (tau0=0.05h)      P&L/h  +1923.7 (sd  2846.5) net of client spread  -1316.8  Sharpe/h +0.676  P&L-Nash  +161.1 ±  81.1  |Q_T|  15.83  lit vol  102.8
+  Learned broker, open loop (MARL)             P&L/h  +1919.0 (sd  2938.3) net of client spread  -1321.5  Sharpe/h +0.653  P&L-Nash  +156.4 ±  39.5  |Q_T|  52.04  lit vol  223.4
+  Learned broker, closed loop (MARL)           P&L/h  +1928.2 (sd  2976.9) net of client spread  -1312.3  Sharpe/h +0.648  P&L-Nash  +165.6 ±  38.7  |Q_T|  54.01  lit vol  227.9
+  frontier Nash broker (closed form), gamma grid: 0: +1730/3332; 0.0001: +1790/3284; 0.0003: +1888/3223; 0.001: +2100/3191; 0.003: +2313/3335; 0.01: +2396/3508; 0.03: +2251/3358; 0.1: +1763/2731; 0.3: +457/1705
+  frontier Inventory decay, tau0 grid: 0.005: +1839/2784; 0.01: +1857/2792; 0.02: +1880/2807; 0.05: +1924/2846; 0.1: +1974/2902; 0.2: +2047/2994; 0.5: +2186/3190; 1: +2310/3383
+  informed   flow on forward drift: -28.6 (t=-4.3); on own inventory: +44.9 (t=+6.8)  [BTC/h per 1 sd]
+  uninformed flow on forward drift: -0.1 (t=-0.0); on own inventory: +38.7 (t=+18.1)  [BTC/h per 1 sd]
+done in 1110s

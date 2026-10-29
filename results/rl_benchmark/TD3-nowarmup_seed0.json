@@ -1,0 +1,19 @@
+{
+  "name": "TD3-nowarmup_seed0",
+  "val_objective": -1863324.505421477,
+  "test": {
+    "objective_mean": -7252993.018573842,
+    "objective_se": 404807.401443239,
+    "pnl_mean": -139743.4455414324,
+    "pnl_sd": 20335.493130997445,
+    "sharpe": -6.871898539230459,
+    "abs_QT": 482.76092715514574,
+    "lit_volume": 5625.210457116972
+  },
+  "algo": "TD3",
+  "seed": 0,
+  "steps": 30000,
+  "extended": false,
+  "reward_scale": 10000.0,
+  "train_seconds": 103.6213047504425
+}

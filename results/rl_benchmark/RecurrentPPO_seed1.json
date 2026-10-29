@@ -1,0 +1,19 @@
+{
+  "name": "RecurrentPPO_seed1",
+  "val_objective": -1911.5409692675182,
+  "test": {
+    "objective_mean": -2490.152860778335,
+    "objective_se": 371.54626531908826,
+    "pnl_mean": 568.6838026401233,
+    "pnl_sd": 2301.543298967991,
+    "sharpe": 0.2470880312767178,
+    "abs_QT": 5.7571054809149285,
+    "lit_volume": 379.6225920686843
+  },
+  "algo": "RecurrentPPO",
+  "seed": 1,
+  "steps": 100000,
+  "extended": false,
+  "reward_scale": 100.0,
+  "train_seconds": 505.03602147102356
+}

@@ -1,0 +1,19 @@
+{
+  "name": "TD3_seed0",
+  "val_objective": -246350.96708870432,
+  "test": {
+    "objective_mean": -559850.6605744788,
+    "objective_se": 49447.302183173604,
+    "pnl_mean": -54220.80098385967,
+    "pnl_sd": 30294.16547928957,
+    "sharpe": -1.7898100220297337,
+    "abs_QT": 161.78292388185338,
+    "lit_volume": 3047.4816331726533
+  },
+  "algo": "TD3",
+  "seed": 0,
+  "steps": 100000,
+  "extended": false,
+  "reward_scale": 10000.0,
+  "train_seconds": 359.9784731864929
+}

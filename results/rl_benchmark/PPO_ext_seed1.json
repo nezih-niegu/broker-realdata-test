@@ -1,0 +1,19 @@
+{
+  "name": "PPO_ext_seed1",
+  "val_objective": -4830.008302982269,
+  "test": {
+    "objective_mean": -4632.6912201280165,
+    "objective_se": 1283.5280203573825,
+    "pnl_mean": 820.2809712984382,
+    "pnl_sd": 2518.0036502643156,
+    "sharpe": 0.32576639482326925,
+    "abs_QT": 5.442710806454812,
+    "lit_volume": 362.23776032919307
+  },
+  "algo": "PPO",
+  "seed": 1,
+  "steps": 200000,
+  "extended": true,
+  "reward_scale": 100.0,
+  "train_seconds": 164.0474681854248
+}

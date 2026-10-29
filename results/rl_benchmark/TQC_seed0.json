@@ -1,0 +1,19 @@
+{
+  "name": "TQC_seed0",
+  "val_objective": -17367.647898629315,
+  "test": {
+    "objective_mean": -18799.939294940406,
+    "objective_se": 1371.8910850146965,
+    "pnl_mean": -3505.549722577932,
+    "pnl_sd": 4555.990950279858,
+    "sharpe": -0.7694373761569036,
+    "abs_QT": 30.48784018755286,
+    "lit_volume": 686.2220089405223
+  },
+  "algo": "TQC",
+  "seed": 0,
+  "steps": 100000,
+  "extended": false,
+  "reward_scale": 10000.0,
+  "train_seconds": 1537.0176649093628
+}

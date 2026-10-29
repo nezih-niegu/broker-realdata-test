@@ -1,0 +1,19 @@
+{
+  "name": "A2C_seed1",
+  "val_objective": -3491.8143907900235,
+  "test": {
+    "objective_mean": -4443.872418663625,
+    "objective_se": 758.3687734301956,
+    "pnl_mean": 1130.6598795558946,
+    "pnl_sd": 2504.2667886921868,
+    "sharpe": 0.4514933810811601,
+    "abs_QT": 7.883304269203996,
+    "lit_volume": 306.7352595076293
+  },
+  "algo": "A2C",
+  "seed": 1,
+  "steps": 200000,
+  "extended": false,
+  "reward_scale": 100.0,
+  "train_seconds": 83.8709020614624
+}

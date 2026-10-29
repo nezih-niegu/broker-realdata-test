@@ -1,0 +1,14 @@
+{
+  "name": "Linear_control_kappa_tuned_on_val",
+  "val_objective": -1845.9830603595121,
+  "test": {
+    "objective_mean": -2185.332090759786,
+    "objective_se": 320.23760938446975,
+    "pnl_mean": 1086.0686174805112,
+    "pnl_sd": 1956.097645498729,
+    "sharpe": 0.5552220871896228,
+    "abs_QT": 4.91234039268177,
+    "lit_volume": 275.34143931955595
+  },
+  "kappa": 50
+}

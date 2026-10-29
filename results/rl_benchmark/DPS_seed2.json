@@ -1,0 +1,17 @@
+{
+  "name": "DPS_seed2",
+  "val_objective": -711.2825250073142,
+  "test": {
+    "objective_mean": -1913.6652712205494,
+    "objective_se": 271.66885162122594,
+    "pnl_mean": 539.6180099846993,
+    "pnl_sd": 1575.9630884467128,
+    "sharpe": 0.342405233942727,
+    "abs_QT": 4.051973679477282,
+    "lit_volume": 329.8756943258388
+  },
+  "algo": "DPS",
+  "seed": 2,
+  "extended": false,
+  "train_seconds": 26.93679642677307
+}

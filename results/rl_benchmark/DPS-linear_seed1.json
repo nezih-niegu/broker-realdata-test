@@ -1,0 +1,17 @@
+{
+  "name": "DPS-linear_seed1",
+  "val_objective": -708.4690392146518,
+  "test": {
+    "objective_mean": -1833.6778426112937,
+    "objective_se": 254.60440233756367,
+    "pnl_mean": 485.19863917566886,
+    "pnl_sd": 1673.8354206812794,
+    "sharpe": 0.28987236927880566,
+    "abs_QT": 3.733870096709815,
+    "lit_volume": 352.21806552798364
+  },
+  "algo": "DPS-linear",
+  "seed": 1,
+  "extended": false,
+  "train_seconds": 47.909897565841675
+}
